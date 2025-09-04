@@ -101,15 +101,15 @@ def draw_polygon_pattern(num_sides, side_length, depth):
 
 def main():
     try:
-        num_sides = int(input("Enter the number of sides (>=3): ").strip())
+        num_sides = int(input("Enter the number of sides (recommended => 3): ").strip())
         side_length = float(input("Enter the side length (px): ").strip())
         depth = int(input("Enter the recursion depth (recommended <= 5): ").strip())
     except Exception as e:
         print("Invalid input:", e)
         return
 
-    if num_sides < 3 or side_length <= 0 or depth < 0:
-        print("Please provide valid positive values (num_sides >= 3, side_length > 0, depth >= 0).")
+    if  side_length <= 0 or depth < 0:
+        print("Please provide valid positive values ( side_length > 0, depth >= 0).")
         return
 
     # Turtle setup: fast drawing and no animation while drawing
