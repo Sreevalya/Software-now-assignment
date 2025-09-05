@@ -130,7 +130,9 @@ def verify_decryption(raw="raw_text.txt", dec="decrypted_text.txt") -> bool:
 if __name__ == "__main__":
     s1 = int(input("Enter shift1 value: "))
     s2 = int(input("Enter shift2 value: "))
-
-    encrypt_file(s1, s2)                # raw_text.txt -> encrypted_text.txt (+ encrypted_text.meta)
-    decrypt_file(s1, s2)                # encrypted_text.txt (+ .meta) -> decrypted_text.txt
-    verify_decryption()
+    if s1<0 or s2<0:
+      print("invalid shift value") 
+    else: 
+     encrypt_file(s1, s2)                # raw_text.txt -> encrypted_text.txt (+ encrypted_text.meta)
+     decrypt_file(s1, s2)                # encrypted_text.txt (+ .meta) -> decrypted_text.txt
+     verify_decryption()
